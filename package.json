@@ -1,0 +1,70 @@
+{
+  "name": "will-it-redos",
+  "version": "0.1.0",
+  "description": "Will it ReDoS? Finds the regexes in your code that a malicious input can hang your server with (catastrophic backtracking) — and prints the exact evil string that does it. Parses each pattern, detects exponential/polynomial blowup, and proves it with a live timing. No API key, no telemetry, runs locally.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "will-it-redos": "./dist/cli.js",
+    "redos": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "example": "node dist/cli.js scan examples --prove",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "redos",
+    "regex",
+    "regexp",
+    "security",
+    "dos",
+    "denial-of-service",
+    "catastrophic-backtracking",
+    "static-analysis",
+    "regular-expression",
+    "appsec",
+    "sast",
+    "vulnerability",
+    "cli"
+  ],
+  "author": "didrod205 (https://github.com/didrod205)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didrod205/will-it-redos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/didrod205/will-it-redos/issues"
+  },
+  "homepage": "https://github.com/didrod205/will-it-redos#readme",
+  "dependencies": {
+    "cac": "^6.7.14",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
